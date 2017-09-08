@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="j2store" method="upgrade">
+	<name>plg_j2store_payment_platron</name>
+	<version>1.0</version>
+	<creationDate>october 2014</creationDate>
+	<author>platron.ru</author>
+	<authorEmail>it@platron.ru</authorEmail>
+	<authorUrl>http://platron.ru</authorUrl>
+	<copyright>platron.ru</copyright>
+	<license>GNU General Public License v2 or later</license>
+	<description>J2STORE_PLATRON_PLUGINDESC</description>
+	<files>
+		<filename plugin="payment_sagepay">payment_sagepay.php</filename>
+		<folder>payment_sagepay</folder>  	
+	</files>
+	<config>
+	<fields name="params">
+		<fieldset name="basic">
+			<field name="display_name" type="text" size="30" default="" label="j2store_plugin_display_name" description="j2store_plugin_display_name_desc"/>
+			<field name="merchant_id" type="text" size="5" default="" label="j2store_platron_merchant_id" description="j2store_platron_merchant_id_desc"/>	
+			<field name="secret_key" type="text" size="50" default="" label="j2store_platron_secret_key" description="j2store_platron_secret_key_desc"/>
+			<field name="lifetime" type="text" size="50" default="" label="j2store_platron_lifetime" description="j2store_platron_lifetime_desc"/>
+
+			<field type="spacer" />
+			<field name="success_url" type="text" size="50" default="" label="j2store_platron_success_url" description="j2store_platron_success_url_desc"/>
+			<field name="failure_url" type="text" size="50" default="" label="j2store_platron_failure_url" description="j2store_platron_failure_url_desc"/>
+
+			<field type="spacer" />
+			<field name="test_mode" type="radio" default="0" label="j2store_platron_test_mode" description="j2store_platron_test_mode_desc">
+			  <option value="0">J2STORE_NO</option>
+			  <option value="1">J2STORE_YES</option>
+			</field>
+		</fieldset>
+	</fields>
+</config>				
+</extension>
