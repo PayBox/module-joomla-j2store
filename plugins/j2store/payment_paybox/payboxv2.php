@@ -14,13 +14,13 @@ defined('_JEXEC') or die('Restricted access');
 include 'PG_Signature.php';
 require_once (JPATH_ADMINISTRATOR.'/components/com_j2store/library/plugins/payment.php');
 
-class plgJ2StorePayment_platron extends J2StorePaymentPlugin
+class plgJ2StorePayment_paybox extends J2StorePaymentPlugin
 {
 	/**
 	 * @var $_element  string  Should always correspond with the plugin's filename,
 	 *                         forcing it to be unique
 	 */
-    var $_element    = 'payment_platron';
+    var $_element    = 'payment_paybox';
 
 	/**
 	 * Constructor
@@ -33,7 +33,7 @@ class plgJ2StorePayment_platron extends J2StorePaymentPlugin
 	 * @param 	array  $config  An array that holds the plugin configuration
 	 * @since 2.5
 	 */
-	function plgJ2StorePayment_platron(& $subject, $config)
+	function plgJ2StorePayment_paybox(& $subject, $config)
 	{
 		parent::__construct($subject, $config);
 		$this->loadLanguage( 'com_j2store', JPATH_ADMINISTRATOR );
@@ -67,7 +67,7 @@ class plgJ2StorePayment_platron extends J2StorePaymentPlugin
 		if($strCurrency == 'RUR')
 			$strCurrency = 'RUB';
 
-		$returnUrl = JURI::base() . "index.php?option=com_j2store&view=checkout&task=confirmPayment&orderpayment_type=payment_platron&Itemid=".$data['order_id']."&orderpayment_id=".$data['orderpayment_id'];
+		$returnUrl = JURI::base() . "index.php?option=com_j2store&view=checkout&task=confirmPayment&orderpayment_type=payment_paybox&Itemid=".$data['order_id']."&orderpayment_id=".$data['orderpayment_id'];
 		$arrFields = array(
 			'pg_merchant_id'		=> $this->params->get('merchant_id',''),
 			'pg_order_id'			=> $data['order_id'],

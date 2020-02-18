@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="j2store" method="upgrade">
+	<name>Payment Paybox</name>
+	<version>1.0</version>
+	<creationDate>February 2020</creationDate>
+	<author>Galym Sarsebek</author>
+	<authorEmail>it@paybox.money</authorEmail>
+	<authorUrl>http://www.paybox.money</authorUrl>
+	<copyright>paybox develops</copyright>
+	<license>GNU General Public License v2 or later</license>
+	<description>PAYBOX_PAYMENT_SYSTEM</description>
+	<files>
+		<filename plugin="payment_paybox">payment_paybox.php</filename>
+		<filename>payboxv2.php</filename>
+		<filename>payboxv3.php</filename>
+		<filename>payboxv3.2.php</filename>
+		<filename>index.html</filename>
+		<filename>PG_Signature.php</filename>
+		<folder>payment_paybox</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="display_name" type="text" size="30" default="" label="plugin_display_name" description="plugin_display_name_desc"/>
+				<field name="display_image" type="media" label="plugin_display_image" description="plugin_display_image_desc"/>
+				<field name="merchant_id" type="text" size="5" default="" label="paybox_merchant_id" description="paybox_merchant_id_desc"/>
+				<field name="secret_key" type="text" size="50" default="" label="paybox_secret_key" description="paybox_secret_key_desc"/>
+				<field name="lifetime" type="text" size="50" default="" label="paybox_lifetime" description="paybox_lifetime_desc"/>
+
+				<field type="spacer" />
+				<field name="success_url" type="text" size="50" default="" label="paybox_success_url" description="paybox_success_url_desc"/>
+				<field name="failure_url" type="text" size="50" default="" label="paybox_failure_url" description="paybox_failure_url_desc"/>
+
+				<field type="spacer" />
+				<field name="test_mode" type="radio" default="0" label="paybox_test_mode" description="paybox_test_mode_desc">
+					<option value="0">J2STORE_NO</option>
+					<option value="1">J2STORE_YES</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
