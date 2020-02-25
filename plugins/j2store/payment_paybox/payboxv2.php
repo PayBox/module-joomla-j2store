@@ -3,7 +3,7 @@
 # com_j2store - J2Store
 # ------------------------------------------------------------------------
 # author    Galym Sarsebek - PayBox Money  https://www.paybox.money
-# copyright Copyright (C) 2020 paybox.money All Rights Reserved.
+# copyright Copyright (C) 2020 Quantum Technologies All Rights Reserved.
 # @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
 # Websites: http://j2store.org
 # Technical Support:  Forum - http://j2store.org/forum/index.html
