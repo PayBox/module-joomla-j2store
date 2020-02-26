@@ -1,14 +1,14 @@
 <?php
 /*
  * --------------------------------------------------------------------------------
-   Weblogicx India  - J2 Store v 3.0 - Payment Plugin - SagePay
+   Quantum Technologies Kazakhstan  - J2 Store v 3.0 - Payment Plugin - SagePay
  * --------------------------------------------------------------------------------
- * @package		Joomla! 2.5x
+ * @package		Joomla! 3.5x
  * @subpackage	J2 Store
- * @author    	Weblogicx India http://www.weblogicxindia.com
- * @copyright	Copyright (c) 2010 - 2015 Weblogicx India Ltd. All rights reserved.
+ * @author    	Quantum Technologies Kazakhstan https://www.paybox.money
+ * @copyright	Copyright (c) 2020 Quantum Technologies Kazakhstan Ltd. All rights reserved.
  * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
- * @link		http://weblogicxindia.com
+ * @link		http://paybox.money
  * --------------------------------------------------------------------------------
 */
 
@@ -31,5 +31,5 @@ defined('_JEXEC') or die('Restricted access');
 		<input type='hidden' name='<?echo $name?>' value='<?echo $value?>'>
     <?}?>
 
-    <input type="submit" class="btn btn-primary button" value="<?php echo JText::_('J2STORE_SAGEPAY_CLICK_TO_COMPLETE_ORDER'); ?>" />
+    <input type="submit" class="btn btn-primary button" value="<?php echo JText::_('Перейти на страницу оплаты'); ?>" />
 </form>
