@@ -31,5 +31,5 @@ defined('_JEXEC') or die('Restricted access');
 		<input type='hidden' name='<?echo $name?>' value='<?echo $value?>'>
     <?}?>
 
-    <input type="submit" class="btn btn-primary button" value="<?php echo JText::_('J2STORE_SAGEPAY_CLICK_TO_COMPLETE_ORDER'); ?>" />
+    <input type="submit" class="btn btn-primary button" value="<?php echo JText::_('Перейти на страницу оплаты'); ?>" />
 </form>

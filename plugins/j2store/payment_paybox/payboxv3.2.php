@@ -54,7 +54,7 @@ class plgJ2StorePayment_paybox extends J2StorePaymentPlugin
         $order = F0FTable::getInstance('Orders', 'Table');
 
         $order->load( $data['orderpayment_id'] );
-        $order = $items;
+        $items = $order;
         $strDescription = '';
         foreach($items as $objItem){
             $strDescription .= $objItem->orderitem_name;
