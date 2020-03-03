@@ -76,7 +76,7 @@ class plgJ2StorePayment_paybox extends J2StorePaymentPlugin
             'pg_amount'				=> sprintf('%0.2f',$data['orderpayment_amount']),
             'pg_lifetime'			=> isset($nLifeTime)?$nLifeTime*60:0,
             'pg_testing_mode'		=> $this->params->get("test_mode",''),
-            'pg_description'		=> $strDescription,
+            'pg_description'		=> 'Покупка на ' . ' ' . $_SERVER['HTTP_HOST'],
             'pg_user_ip'			=> $_SERVER['REMOTE_ADDR'],
             'pg_language'			=> (JFactory::getLanguage()->getTag() == 'ru-RU')?'ru':'en',
             'pg_check_url'			=> $returnUrl,
@@ -149,7 +149,7 @@ class plgJ2StorePayment_paybox extends J2StorePaymentPlugin
             $arrRequest = $_GET;
 
 
-        $order = JTable::getInstance('Orders', 'Table');
+        $order = F0FTable::getInstance('Orders', 'Table');
         $order->load( $arrRequest['orderpayment_id'] );
 
         $arrStatuses = array(
