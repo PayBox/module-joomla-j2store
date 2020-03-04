@@ -205,14 +205,14 @@ class plgJ2StorePayment_paybox extends J2StorePaymentPlugin
                     $order->transaction_status = 'Processed';
                     $order->order_state_id = $arrStatuses['Processed'];
                     $order->order_state = 'J2STORE_PROCESSED';
-                    $order->save();
+                    $order->store();
                 }
                 else{
                     // Не удачная оплата
                     $order->transaction_status = 'Failed';
                     $order->order_state_id = $arrStatuses['Failed'];
                     $order->order_state = 'J2STORE_FAILED';
-                    $order->save();
+                    $order->store();
                 }
             }
             if(!$bResult)
