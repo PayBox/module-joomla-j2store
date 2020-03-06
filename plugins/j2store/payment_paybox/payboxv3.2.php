@@ -51,7 +51,7 @@ class plgJ2StorePayment_paybox extends J2StorePaymentPlugin
     function _prePayment( $data )
     {
         F0FTable::addIncludePath(JPATH_ADMINISTRATOR.'/components/com_j2store/tables');
-        $order = F0FTable::getInstance('Orders', 'Table');
+        $order = F0FTable::getInstance ( 'Order', 'J2StoreTable' );
 
         $order->load( $data['orderpayment_id'] );
         $items = $order;
@@ -149,7 +149,7 @@ class plgJ2StorePayment_paybox extends J2StorePaymentPlugin
             $arrRequest = $_GET;
 
 
-        $order = F0FTable::getInstance('Orders', 'Table');
+        $order = F0FTable::getInstance ( 'Order', 'J2StoreTable' );
         $order->load( $arrRequest['orderpayment_id'] );
 
         $arrStatuses = array(
@@ -202,13 +202,15 @@ class plgJ2StorePayment_paybox extends J2StorePaymentPlugin
                 $strResponseDescription = "Оплата принята";
                 if ($arrRequest['pg_result'] == 1) {
                     // Установим статус оплачен
-                    $order->transaction_status = 'Processed';
-                    $order->order_state_id = $arrStatuses['Processed'];
-                    $order->order_state = 'J2STORE_PROCESSED';
+                    $order->transaction_status = 'Confirmed';
+                    $order->order_state_id = $arrStatuses['Confirmed'];
+                    $order->order_state = 'J2STORE_CONFIRMED';
+                    $order->empty_cart();
+                    $order->payment_complete();
                     $order->store();
                 }
                 else{
-                    // Не удачная оплата
+                    // Неудачная оплата
                     $order->transaction_status = 'Failed';
                     $order->order_state_id = $arrStatuses['Failed'];
                     $order->order_state = 'J2STORE_FAILED';
