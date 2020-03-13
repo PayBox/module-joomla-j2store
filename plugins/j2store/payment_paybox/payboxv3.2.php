@@ -243,8 +243,6 @@ class plgJ2StorePayment_paybox extends J2StorePaymentPlugin
      */
     function _renderForm( $data )
     {
-        var_dump(__METHOD__);
-        die();
         $user = JFactory::getUser();
         $vars = new JObject();
         $vars->onselection_text = $this->params->get('onselection', '');
